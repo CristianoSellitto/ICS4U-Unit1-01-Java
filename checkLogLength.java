@@ -1,17 +1,18 @@
 /*
-* The HelloWorld program implements an application that
-* simply displays "Hello World!" to the standard output.
+* Finds how much logs a truck can carry if the max weight
+* it can carry is 1100 kg and each log is 20 kg/m
 *
 * @author  Cristiano Sellitto
 * @version 1.0
-* @since   2024-02-14;
+* @since   2024-02-15
 */
+
+import java.util.Scanner;
 
 /**
-* This is the standard "Hello, World!" program.
+* This is the program.
 */
-final class HelloWorld {
-
+final class checkLogLength {
     /**
     * Prevent instantiation.
     * Throw an exception IllegalStateException.
@@ -20,7 +21,7 @@ final class HelloWorld {
     * @throws IllegalStateException if this is ever called
     *
     */
-    private HelloWorld() {
+    private checkLogLength() {
         throw new IllegalStateException("Cannot be instantiated");
     }
 
@@ -30,9 +31,13 @@ final class HelloWorld {
     * @param args No args will be used
     */
     public static void main(final String[] args) {
+        final Scanner input = new Scanner(System.in);
+        System.out.print("Enter log length (m): ");
 
-        // print out "Hello, World!"
-        System.out.println("Hello, World!");
+        static final float length = Float.parseFloat(input.nextLine());
+        static final float maxLogsCarried = 1100 / (20 * length);
+
+        System.out.println("A truck can carry " + maxLogsCarried + " " + length + " meter long logs.");
 
         System.out.println("\nDone.");
     }
